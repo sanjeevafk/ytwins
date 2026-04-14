@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Github } from 'lucide-react';
 import { Bebas_Neue, Work_Sans } from 'next/font/google';
 
 const displayFont = Bebas_Neue({
@@ -33,7 +34,16 @@ export default function LandingPage() {
                         />
                         <span className="text-lg tracking-[0.2em] uppercase text-white font-semibold">VexTube</span>
                     </div>
-                    <div className="hidden sm:flex items-center gap-3">
+                    <div className="hidden sm:flex items-center gap-4">
+                        <Link
+                            href="https://github.com/sanjeevafk/VexTube"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center justify-center h-9 w-9 rounded-full border border-vex-border text-vex-muted hover:text-white hover:border-white/60 transition-colors"
+                            aria-label="VexTube GitHub repository"
+                        >
+                            <Github className="w-4 h-4" />
+                        </Link>
                         <Link
                             href="/privacy"
                             className="text-xs uppercase tracking-widest text-vex-muted hover:text-white transition-colors"
@@ -164,7 +174,18 @@ export default function LandingPage() {
             <footer className="py-10 border-t border-vex-border/30">
                 <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-vex-muted">
                     <span>Focus. Review. Repeat.</span>
-                    <Link href="/app" className="text-vex-primary hover:text-vex-primaryHover">Launch VexTube</Link>
+                    <div className="flex items-center gap-4">
+                        <Link
+                            href="https://github.com/sanjeevafk/VexTube"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-vex-muted hover:text-white transition-colors"
+                        >
+                            <Github className="w-4 h-4" />
+                            GitHub
+                        </Link>
+                        <Link href="/app" className="text-vex-primary hover:text-vex-primaryHover">Launch VexTube</Link>
+                    </div>
                 </div>
             </footer>
         </div>
