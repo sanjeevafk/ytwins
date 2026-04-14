@@ -48,8 +48,7 @@ VexTube is a web application that enhances the YouTube learning experience by re
 
 ### APIs & Services
 - YouTube Data API v3 for video metadata (server-side only)
-- Supabase for data persistence
-- LocalStorage for offline caching
+- LocalStorage for all data persistence
 
 ### Key Libraries
 - react-youtube for video embedding
@@ -71,20 +70,6 @@ Create a `.env.local` file in the root directory:
 ```env
 # YouTube API (Server-side only - do NOT use NEXT_PUBLIC prefix)
 YOUTUBE_API_KEY=your_youtube_api_key
-
-# Google OAuth
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-# NextAuth.js
-AUTH_SECRET=your_auth_secret
-NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
-
-# Supabase (Public keys work with Row-Level Security)
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ```
 
 ### Installation
@@ -133,7 +118,6 @@ src/
 │   └── ui/                   # Reusable UI components
 └── lib/
     ├── youtube.ts            # YouTube client (calls server routes)
-    ├── supabase.ts           # Supabase client
     ├── storage.ts            # LocalStorage utilities
     └── types.ts              # TypeScript definitions
 ```
@@ -153,7 +137,7 @@ src/
 
 ## Data Storage
 
-Data is stored in Supabase with LocalStorage fallback:
+All data is stored locally in the browser (no server storage):
 - Video progress and completion status
 - Playback settings (speed, dark mode)
 - Personal notes with timestamps
@@ -182,7 +166,6 @@ Data is stored in Supabase with LocalStorage fallback:
 ## Future Roadmap
 
 - Enhanced gamification features
-- Learning streaks and achievements
 - Advanced note organization
 - Social learning features
 

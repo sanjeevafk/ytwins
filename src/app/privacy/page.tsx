@@ -41,13 +41,13 @@ export default function PrivacyPage() {
                         <h2 className="text-2xl font-semibold text-white mb-4">Information We Collect</h2>
                         <ul className="space-y-3 text-gray-300">
                             <li>
-                                <strong className="text-green-400">Google Account Information:</strong> If you sign in using Google, we may collect your name, email address, and basic profile information for authentication purposes.
+                                <strong className="text-green-400">No Account Information:</strong> This app does not support accounts or sign-in and does not collect identity data.
                             </li>
                             <li>
-                                <strong className="text-green-400">User Content:</strong> Notes you create while using the application.
+                                <strong className="text-green-400">User Content (Local Only):</strong> Notes, playlists, and settings are stored only in your browser local storage.
                             </li>
                             <li>
-                                <strong className="text-green-400">Usage Data:</strong> Basic, non-identifying usage data to ensure the application functions correctly.
+                                <strong className="text-green-400">No Tracking:</strong> We do not collect analytics, telemetry, or usage tracking of any kind.
                             </li>
                         </ul>
                     </section>
@@ -55,17 +55,16 @@ export default function PrivacyPage() {
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-white mb-4">How We Use Information</h2>
                         <ul className="space-y-2 text-gray-300">
-                            <li>To authenticate users and maintain user sessions.</li>
-                            <li>To store and display your notes associated with videos.</li>
-                            <li>To operate, maintain, and improve the application.</li>
+                            <li>To store and display your notes and playlist progress locally in your browser.</li>
+                            <li>To operate the application features you use.</li>
                         </ul>
                     </section>
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-white mb-4">Data Storage and Security</h2>
                         <ul className="space-y-2 text-gray-300">
-                            <li>User data and notes are stored securely.</li>
-                            <li>Reasonable technical measures are used to protect data from unauthorized access.</li>
+                            <li>All data is stored locally in your browser and never sent to our servers.</li>
+                            <li>Clearing browser storage will permanently remove your data from this device.</li>
                         </ul>
                     </section>
 
@@ -80,16 +79,16 @@ export default function PrivacyPage() {
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-white mb-4">YouTube and Google APIs</h2>
                         <ul className="space-y-2 text-gray-300">
-                            <li>This application uses Google OAuth and may access YouTube content in accordance with Google API Services User Data Policy.</li>
-                            <li>No YouTube account data is stored beyond what is necessary for playback and note association.</li>
+                            <li>This application uses the YouTube Data API to fetch public playlist and video metadata.</li>
+                            <li>We do not use Google OAuth or access your Google account data.</li>
                         </ul>
                     </section>
 
                     <section className="mb-8">
                         <h2 className="text-2xl font-semibold text-white mb-4">Data Retention and Deletion</h2>
                         <ul className="space-y-2 text-gray-300">
-                            <li>User data is retained only as long as necessary to provide the service.</li>
-                            <li>You may request deletion of your data by contacting us.</li>
+                            <li>Your data remains on your device until you clear it from the app or browser settings.</li>
+                            <li>Use the in-app &quot;Clear Local Data&quot; option to remove all local data.</li>
                         </ul>
                     </section>
 
