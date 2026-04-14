@@ -9,15 +9,18 @@ interface PlaylistSidebarProps {
     videos: Video[];
     currentIndex: number;
     onVideoSelect: (index: number) => void;
+    playlistTitle?: string;
 }
 
-export const PlaylistSidebar = memo(({ videos, currentIndex, onVideoSelect }: PlaylistSidebarProps) => {
+export const PlaylistSidebar = memo(({ videos, currentIndex, onVideoSelect, playlistTitle }: PlaylistSidebarProps) => {
+    const title = playlistTitle ? `${playlistTitle} (${videos.length})` : `Playlist Videos (${videos.length})`;
+
     return (
         <div className="w-full h-[600px] backdrop-blur rounded-xl shadow-lg overflow-hidden flex flex-col bg-[#232323]">
             <div className="p-4 flex-shrink-0 bg-green-600">
                 <h3 className="font-semibold text-white flex items-center gap-2">
                     <PlayCircle size={20} />
-                    Playlist Videos ({videos.length})
+                    {title}
                 </h3>
             </div>
             <div className="flex-1 overflow-y-auto custom-scrollbar">
