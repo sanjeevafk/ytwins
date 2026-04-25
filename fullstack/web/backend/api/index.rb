@@ -1,3 +1,3 @@
 require_relative '../app'
 
-Handler = FocusTube
+Handler = FocusTubeAPI

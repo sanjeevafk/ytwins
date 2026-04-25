@@ -1,7 +1,11 @@
 {
   "functions": {
-    "backend/app.rb": {
-      "runtime": "@vercel/ruby@latest"
+    "backend/api/index.rb": {
+      "runtime": "@vercel/ruby"
     }
-  }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/api/index.rb" },
+    { "src": "/auth/(.*)", "dest": "/backend/api/index.rb" }
+  ]
 }

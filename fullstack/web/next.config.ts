@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
+  // NOTE: output: 'standalone' is removed — it is incompatible with Vercel
+  // and must only be used for Docker / self-hosted deployments.
   images: {
     remotePatterns: [
       {
@@ -10,20 +11,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      { source: '/api/notes', destination: '/backend/app.rb' },
-      { source: '/api/notes/:path*', destination: '/backend/app.rb' },
-      { source: '/api/collections', destination: '/backend/app.rb' },
-      { source: '/api/collections/:path*', destination: '/backend/app.rb' },
-      { source: '/api/reviews/:path*', destination: '/backend/app.rb' },
-      { source: '/api/videos', destination: '/backend/app.rb' },
-      { source: '/api/videos/:path*', destination: '/backend/app.rb' },
-      { source: '/api/me', destination: '/backend/app.rb' },
-      { source: '/api/logout', destination: '/backend/app.rb' },
-      { source: '/auth/:path*', destination: '/backend/app.rb' },
-    ];
-  },
+  // NOTE: rewrites() removed — Vercel edge routing (vercel.json routes block)
+  // handles /api/* and /auth/* before Next.js ever sees the request.
+  // The old destinations ('/backend/app.rb') were file paths, not valid URLs,
+  // so they always resolved to 404.
 };
 
 export default nextConfig;

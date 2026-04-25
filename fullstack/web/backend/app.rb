@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require 'sinatra/reloader'
 require 'dotenv/load'
 require 'json'
 require 'rack/cors'
@@ -22,11 +21,11 @@ class FocusTubeAPI < Sinatra::Base
   end
 
   configure :development do
+    require 'sinatra/reloader'
     register Sinatra::Reloader
   end
 
   configure do
-    set :sessions, true
     set :session_secret, ENV['SESSION_SECRET'] || 'development_secret'
     # Use secure HTTP-only cookies
     use Rack::Session::Cookie, 
