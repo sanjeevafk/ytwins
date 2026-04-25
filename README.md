@@ -60,6 +60,16 @@ This will:
 - Spin up the Next.js Frontend on port `3000`
 - Persist your local database in `fullstack/backend/db`
 
+## Deployment (Vercel)
+When deploying this monorepo to Vercel, it's crucial that you configure it correctly to avoid hitting the Serverless Function limits on the Hobby plan:
+
+1. **Root Directory**: Leave the Root Directory completely blank in Vercel (so it defaults to `/`). **Do not** set it to `fullstack/web`.
+2. **Framework Preset**: Vercel will auto-detect "Other". Leave it as is.
+3. **Build Command**: Leave blank. Vercel will rely on the `vercel.json` file.
+
+**How it works:**
+The `vercel.json` file at the root uses the explicit `builds` configuration to tell Vercel to only build the Next.js app (`fullstack/web`) and the Ruby backend (`fullstack/backend/app.rb`). Additionally, the backend was explicitly named `backend/` instead of `api/` to prevent Vercel's zero-config logic from automatically turning every `.rb` file into an individual serverless function, which would exhaust the Hobby plan limit.
+
 ## Repository Structure
 - `fullstack/backend`: The Ruby backend logic and database models.
 - `fullstack/web`: The Next.js frontend application.
