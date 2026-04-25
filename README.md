@@ -1,173 +1,62 @@
-# VexTube
+# FocusTube — Polyglot Learning Platform
 
-A local-first YouTube learning studio for focused viewing, structured notes, and deliberate review.
+FocusTube is a distraction-free YouTube learning companion designed to convert video content into retained knowledge. This repository showcases the evolution of the project from a client-side prototype to a full-stack, database-driven application.
 
-## Summary
+## 🚀 Project Evolution
 
-- Distraction-free player with progress tracking and cinema mode.
-- Fast note-taking with timestamps, search, and export.
-- Review mode with spaced repetition, plus focus timer and stats.
-- Collections and favorites to organize playlists.
-- Everything stays on-device by default.
+### v2.0: FocusTube (Ruby Edition) — `current`
+**The Full-Stack Evolution.** Built to provide a permanent, synchronized learning environment with a professional backend.
+- **Tech Stack**: Ruby, Sinatra, Sequel ORM, Turso (SQLite/libSQL).
+- **Authentication**: Google OAuth 2.0.
+- **Persistence**: Relational database for users, videos, notes, and collections.
+- **Algorithm**: Server-side SM-2 Spaced Repetition scheduler.
+- **Deployment**: Vercel Serverless Ruby.
 
-## Features
+### v1.0: VexTube (TypeScript Edition) — `legacy`
+**The Client-Side MVP.** A fast, local-first tool designed for immediate use without an account.
+- **Tech Stack**: Next.js 16, React 19, Tailwind CSS 4, Radix UI.
+- **Architecture**: Stateless/Local-only using Browser Storage.
+- **Key Features**: PDF/Markdown exports, Pomodoro timer, LaTeX & Syntax Highlighting support.
+- **Optimization**: React Virtualized for high-performance note rendering.
 
-### Learning Workflow
-- Playlist and single video support via URL
-- Progress tracking with completion states
-- Playback speed presets and fullscreen
-- Cinema mode for minimal distractions
-- Keyboard shortcuts for core actions
+---
 
-### Notes and Knowledge
-- Per-video notes stored locally
-- Timestamp capture and jump-to-time
-- Live search, filters, and sorting
-- Export notes as PDF, TXT, or Markdown
+## 📁 Repository Structure
 
-### Review and Focus
-- Review mode with spaced repetition ratings
-- Focus timer with work and break cycles
-- Stats dashboard for completion and notes
-
-### Organization
-- Playlist naming prompt on first load
-- Collections with favorites and assignment
-- Quick open for the current playlist
-
-## Architecture
-
-VexTube is local-first. The only server activity is the YouTube metadata proxy. All learning data, notes, and review state live in the browser.
-
-```mermaid
-flowchart LR
-    UI[Next.js App Router UI]
-    LS[(LocalStorage)]
-    API[/Route Handlers: /api/youtube/*/]
-    YT[YouTube Data API]
-    Player[YouTube IFrame Player]
-
-    UI --> LS
-    UI --> Player
-    UI -->|fetch| API
-    API --> YT
+```text
+.
+├── ruby/               # v2.0 - Active Full-Stack Implementation
+│   ├── api/            # Vercel Serverless Entry points
+│   ├── db/             # Schema and Migrations
+│   ├── views/          # ERB Templates
+│   └── app.rb          # Core Sinatra Logic
+├── typescript/         # v1.0 - Local-First TS Implementation
+│   ├── src/            # Next.js App Router & Components
+│   └── package.json    # Modern TS/React Dependencies
+├── README.md           # Root Documentation
+└── vercel.json         # Deployment Configuration (Active: Ruby)
 ```
 
-```mermaid
-flowchart TD
-    NoteTaker[Note Taker] --> Notes[(Local Notes)]
-    Notes --> Review[Review Mode]
-    Notes --> Export[Exporters]
-    Notes --> Stats[Stats Dashboard]
-    Review --> Ratings[(Spaced Repetition Data)]
-```
+---
 
-## Technology Stack
+## 🛠 Setup & Installation
 
-### Framework
-- Next.js 16.1.1 (App Router)
-- React 19.2.3
-- TypeScript 5.x
+### Running the Ruby Version (v2.0)
+1. Navigate to `/ruby`
+2. Install dependencies: `bundle install`
+3. Initialize DB: `bundle exec ruby db/schema.rb`
+4. Start server: `bundle exec rackup`
 
-### Styling
-- Tailwind CSS 4.x
-- Radix UI primitives
+### Running the TypeScript Version (v1.0)
+1. Navigate to `/typescript`
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
 
-### APIs and Storage
-- YouTube Data API v3 via server routes
-- LocalStorage for all user data
+---
 
-### Key Libraries
-- react-youtube
-- react-markdown, rehype-katex
-- react-syntax-highlighter
-- jsPDF
+## 🌐 Deployment
 
-## Getting Started
+The repository is currently configured for a **Monorepo Deployment** on Vercel. 
 
-### Prerequisites
-- Node.js 18.x or higher
-- npm, pnpm, yarn, or bun
-
-### Environment Variables
-
-Create a `.env.local` file in the root directory:
-
-```env
-# YouTube API (server-side only, do NOT use NEXT_PUBLIC)
-YOUTUBE_API_KEY=your_youtube_api_key
-```
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-### Production Build
-
-```bash
-npm run build
-npm start
-```
-
-### Linting
-
-```bash
-npm run lint
-```
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── api/                  # Server-only route handlers
-│   │   └── youtube/          # YouTube API proxy routes
-│   ├── page.tsx              # Landing page
-│   ├── app/page.tsx          # Main application
-│   ├── layout.tsx            # Root layout
-│   └── globals.css           # Global styles
-├── components/
-│   ├── VideoPlayer.tsx       # Player with controls
-│   ├── NoteTaker.tsx         # Note-taking interface
-│   ├── ReviewMode.tsx        # Spaced repetition review
-│   ├── CollectionManager.tsx # Playlist organization
-│   ├── FocusTimer.tsx        # Pomodoro timer
-│   ├── StatsDashboard.tsx    # Progress stats
-│   └── ui/                   # Radix UI wrappers
-└── lib/
-    ├── youtube.ts            # YouTube client (server routes)
-    ├── storage.ts            # LocalStorage utilities
-    ├── notes.ts              # Note loading helpers
-    └── types.ts              # TypeScript definitions
-```
-
-## Data Storage
-
-All data is stored locally in the browser:
-- Video progress and completion state
-- Playback settings and player position
-- Notes, timestamps, and review ratings
-- Collections, favorites, and playlist metadata
-
-## Performance Notes
-
-- Lazy-loaded YouTube player
-- Throttled LocalStorage writes
-- Memoized components for large lists
-
-## Known Limitations
-
-- YouTube API has daily quota limits
-- LocalStorage is typically limited to 5 to 10MB
-
-## License
-
-MIT
+- **Primary Route**: The root `vercel.json` routes all traffic to the **Ruby** implementation in `/ruby`.
+- **Database**: Connected to **Turso** for global SQLite persistence.

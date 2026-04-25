@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "ruby/api/index.rb": {
+      "runtime": "@vercel/ruby"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "ruby/api/index.rb"
+    }
+  ]
+}
