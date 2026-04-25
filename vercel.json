@@ -1,5 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "fullstack/web/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "fullstack/api/app.rb",
+      "use": "@vercel/ruby"
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -13,10 +23,5 @@
       "source": "/(.*)",
       "destination": "/fullstack/web/$1"
     }
-  ],
-  "functions": {
-    "fullstack/api/app.rb": {
-      "runtime": "@vercel/ruby"
-    }
-  }
+  ]
 }
