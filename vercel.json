@@ -6,18 +6,18 @@
       "use": "@vercel/next"
     },
     {
-      "src": "fullstack/api/app.rb",
+      "src": "fullstack/backend/app.rb",
       "use": "@vercel/ruby"
     }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/fullstack/api/app.rb"
+      "destination": "/fullstack/backend/app.rb"
     },
     {
       "source": "/auth/(.*)",
-      "destination": "/fullstack/api/app.rb"
+      "destination": "/fullstack/backend/app.rb"
     },
     {
       "source": "/(.*)",
