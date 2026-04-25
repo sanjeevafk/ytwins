@@ -36,7 +36,7 @@ Alternatively, you can run them separately:
 
 **Backend:**
 ```bash
-cd fullstack/backend
+cd fullstack/web/backend
 bundle install
 bundle exec rackup -p 4567
 ```
@@ -58,21 +58,21 @@ docker-compose up --build
 This will:
 - Spin up the Ruby API on port `4567`
 - Spin up the Next.js Frontend on port `3000`
-- Persist your local database in `fullstack/backend/db`
+- Persist your local database in `fullstack/web/backend/db`
 
 ## Deployment (Vercel)
 When deploying this monorepo to Vercel, it's crucial that you configure it correctly to avoid hitting the Serverless Function limits on the Hobby plan:
 
-1. **Root Directory**: Leave the Root Directory completely blank in Vercel (so it defaults to `/`). **Do not** set it to `fullstack/web`.
-2. **Framework Preset**: Vercel will auto-detect "Other". Leave it as is.
-3. **Build Command**: Leave blank. Vercel will rely on the `vercel.json` file.
+1. **Root Directory**: Set the Root Directory to `fullstack/web` in Vercel.
+2. **Framework Preset**: Vercel will auto-detect "Next.js". Leave it as is.
+3. **Build Command**: Leave blank. Vercel will build Next.js natively.
 
 **How it works:**
-The `vercel.json` file at the root uses the explicit `builds` configuration to tell Vercel to only build the Next.js app (`fullstack/web`) and the Ruby backend (`fullstack/backend/app.rb`). Additionally, the backend was explicitly named `backend/` instead of `api/` to prevent Vercel's zero-config logic from automatically turning every `.rb` file into an individual serverless function, which would exhaust the Hobby plan limit.
+The `fullstack/web/vercel.json` file uses the `functions` property to configure the Ruby backend (`backend/app.rb`). Because the Next.js app is the root directory in Vercel, Next.js handles routing and natively deploys to `/` without breaking client-side navigation. The Next.js config (`next.config.ts`) rewrites API calls to the Ruby backend serverless function.
 
 ## Repository Structure
-- `fullstack/backend`: The Ruby backend logic and database models.
 - `fullstack/web`: The Next.js frontend application.
+- `fullstack/web/backend`: The Ruby backend logic and database models.
 - `ruby/`: (Legacy) Historical server-side templates.
 - `typescript/`: (Legacy) Historical local-storage MVP.
 

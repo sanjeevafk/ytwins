@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "backend/app.rb": {
+      "runtime": "@vercel/ruby"
+    }
+  }
+}

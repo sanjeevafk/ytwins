@@ -21,10 +21,10 @@ fi
 echo "💎 Starting Ruby Backend on port 4567..."
 # Use bundle if available, otherwise try to install gems
 if command -v bundle >/dev/null 2>&1; then
-    cd fullstack/backend && bundle exec rackup -p 4567 &
+    cd fullstack/web/backend && bundle exec rackup -p 4567 &
 else
     echo "⚠️ bundle command not found. Trying to run without bundle exec..."
-    cd fullstack/backend && rackup -p 4567 &
+    cd fullstack/web/backend && rackup -p 4567 &
 fi
 
 # Start the Frontend (Next.js)
