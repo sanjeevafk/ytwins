@@ -4,8 +4,8 @@ FocusTube is a distraction-free YouTube learning companion designed to convert v
 
 ## Project Evolution
 
-### v2.0: FocusTube (Ruby Edition) — Active Implementation
-The current version focuses on persistence, synchronization, and algorithmic learning through a robust backend.
+### v2.0: FocusTube (Ruby Edition)
+This version focuses on persistence, synchronization, and algorithmic learning through a robust backend.
 
 - **Backend Architecture**: Built with Ruby and Sinatra, utilizing Rack middleware for session security and CSRF protection.
 - **Persistence Layer**: Implements the Sequel ORM with a Turso (libSQL) backend, providing a relational schema for users, timestamped notes, and video metadata.
@@ -13,7 +13,7 @@ The current version focuses on persistence, synchronization, and algorithmic lea
 - **Learning Logic**: Implements a server-side SM-2 (Spaced Repetition) algorithm. It dynamically calculates E-Factors (Ease Factors), repetition counts, and review intervals (in days) based on user recall quality (1-5 scale).
 - **Infrastructure**: Deployed as Vercel Serverless Functions using the @vercel/ruby runtime, optimized for low-latency relational queries.
 
-### v1.0: VexTube (TypeScript Edition) — Legacy Prototype
+### v1.0: VexTube (TypeScript Edition)
 The original prototype focused on a local-first, high-performance user experience with rich client-side features.
 
 - **Frontend Architecture**: Built on Next.js 16 (App Router) and React 19, utilizing a component-driven design with Radix UI primitives.
