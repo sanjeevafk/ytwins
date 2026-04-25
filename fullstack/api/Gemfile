@@ -1,0 +1,21 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sequel'
+gem 'libsql'
+gem 'omniauth-google-oauth2'
+gem 'dotenv'
+gem 'rack-protection'
+gem 'erubi' # for ERB
+gem 'sqlite3'
+gem 'thin' # web server for local dev
+gem 'rackup'
+gem 'rack-cors'
+gem 'rack-attack'
+gem 'json'
+
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+end

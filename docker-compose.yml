@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: ./fullstack/api
+      dockerfile: Dockerfile
+    ports:
+      - "4567:4567"
+    environment:
+      - RACK_ENV=production
+      - SESSION_SECRET=${SESSION_SECRET:-development_secret}
+      - DATABASE_URL=libsql://... # Replace with actual or use local mount
+    volumes:
+      - ./fullstack/api/db:/app/db
+
+  web:
+    build:
+      context: ./fullstack/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - api

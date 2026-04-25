@@ -1,14 +1,22 @@
 {
   "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/fullstack/api/app.rb"
+    },
+    {
+      "source": "/auth/(.*)",
+      "destination": "/fullstack/api/app.rb"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/fullstack/web/$1"
+    }
+  ],
   "functions": {
-    "ruby/api/index.rb": {
+    "fullstack/api/app.rb": {
       "runtime": "@vercel/ruby"
     }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "ruby/api/index.rb"
-    }
-  ]
+  }
 }

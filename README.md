@@ -1,65 +1,70 @@
-# Ytwins — A Polyglot Study Companion
+# FocusTube (Ytwins) — Learning, Optimized.
 
-YT Twins explores the same product vision through two distinct architectural lenses: a client-side TypeScript MVP (VexTube) and a full-stack Ruby evolution (FocusTube). This repository serves as a comparative study in polyglot development, demonstrating how different stacks solve identical problems in persistence, state management, and user experience.
+FocusTube is a dual-language (Ruby + TypeScript) full-stack application that helps users turn YouTube learning into retained knowledge through distraction-free watching, timestamped notes, and spaced review.
 
-## The Twins: Architectural Comparison
+## Why Built?
+YouTube is the world's largest classroom, but it's also the world's largest distraction engine. FocusTube was built to provide a dedicated environment for deep learning, stripping away recommendations and comments while adding powerful tools for active recall and spaced repetition.
 
-### The Ruby Twin (FocusTube)
-The "Server-Side" twin focuses on persistence, synchronization, and algorithmic learning through a robust backend.
+## The Stack
+- **Frontend**: Next.js 15 (App Router) with React 19, Tailwind CSS, and Lucide icons.
+- **Backend**: Ruby & Sinatra (modular API) with Sequel ORM.
+- **Persistence**: Turso (libSQL) for edge-optimized relational data.
+- **Authentication**: Google OAuth 2.0 for secure, seamless login.
+- **Deployment**: Vercel (Unified Next.js + Ruby Serverless).
 
-- **Backend Architecture**: Built with Ruby and Sinatra, utilizing Rack middleware for session security and CSRF protection.
-- **Persistence Layer**: Implements the Sequel ORM with a Turso (libSQL) backend, providing a relational schema for users, timestamped notes, and video metadata.
-- **Authentication**: Integrated Google OAuth 2.0 via OmniAuth, enabling secure cross-device synchronization.
-- **Learning Logic**: Implements a server-side SM-2 (Spaced Repetition) algorithm. It dynamically calculates E-Factors (Ease Factors), repetition counts, and review intervals (in days) based on user recall quality.
-- **Infrastructure**: Deployed as Vercel Serverless Functions using the @vercel/ruby runtime, optimized for low-latency relational queries.
+## Key Features
+- **Distraction-Free Player**: Watch YouTube without the "up next" noise.
+- **Timestamped Note-Taking**: Capture ideas at the exact moment they happen in the video.
+- **Spaced Review (SM-2)**: An integrated spaced-repetition algorithm that surfaces notes for review just as you're about to forget them.
+- **Collection Management**: Organize your learning resources into logical groups.
+- **Cloud Sync**: All your notes and progress are synced across devices.
 
-### The TypeScript Twin (VexTube)
-The "Client-Side" twin focuses on a local-first, high-performance user experience with rich interactive features.
+## Architectural Tradeoffs
+- **Sinatra vs Rails**: Chose Sinatra for a lightweight, intentional API surface that doesn't overcomplicate the small feature set.
+- **Turso/libSQL**: Opted for Turso to keep the database close to the edge, ensuring snappy responses for global users.
+- **HTTP-Only Cookies**: Prioritized security by using server-side session management over JWTs to avoid XSS risks.
 
-- **Frontend Architecture**: Built on Next.js 16 (App Router) and React 19, utilizing a component-driven design with Radix UI primitives.
-- **State Management**: Stateless architecture with a LocalStorage persistence layer for notes and playlist state management.
-- **Note Processing Pipeline**: Utilizes Remark and Rehype for real-time Markdown rendering, including LaTeX support (Katex) and syntax highlighting for technical notes.
-- **Performance Optimization**: Implements windowing/virtualization via `react-window` to maintain high frame rates when rendering extensive note timelines.
-- **Tooling**: Includes a client-side Pomodoro timer for focus sessions and PDF generation logic via `jspdf` for offline study exports.
+## Setup
 
----
-
-## Repository Structure
-
-```text
-.
-├── ruby/               # The Ruby Twin (v2.0)
-│   ├── api/            # Vercel Serverless entry points
-│   ├── db/             # Relational schema and migrations
-│   ├── views/          # Server-side ERB templates
-│   └── app.rb          # Sinatra application and SM-2 logic
-├── typescript/         # The TypeScript Twin (v1.0)
-│   ├── src/            # Next.js App Router and components
-│   └── package.json    # React 19 and Tailwind 4 dependencies
-├── README.md           # Unified technical documentation
-└── vercel.json         # Routing configuration (Active: /ruby)
+### Local Development
+The easiest way to start both the backend and frontend is to use the unified dev script:
+```bash
+./dev.sh
 ```
 
+Alternatively, you can run them separately:
+
+**Backend:**
+```bash
+cd fullstack/api
+bundle install
+bundle exec rackup -p 4567
+```
+
+**Frontend:**
+```bash
+cd fullstack/web
+npm install
+npm run dev
+```
+
+### Docker (Recommended for Production/Testing)
+If you have Docker and Docker Compose installed, you can start the entire stack with a single command:
+
+```bash
+docker-compose up --build
+```
+
+This will:
+- Spin up the Ruby API on port `4567`
+- Spin up the Next.js Frontend on port `3000`
+- Persist your local database in `fullstack/api/db`
+
+## Repository Structure
+- `fullstack/api`: The Ruby backend logic and database models.
+- `fullstack/web`: The Next.js frontend application.
+- `ruby/`: (Legacy) Historical server-side templates.
+- `typescript/`: (Legacy) Historical local-storage MVP.
+
 ---
 
-## Setup and Installation
-
-### Running the Ruby Twin
-1. Navigate to the `/ruby` directory.
-2. Install dependencies: `bundle install`
-3. Initialize the local database: `bundle exec ruby db/schema.rb`
-4. Start the development server: `bundle exec rackup`
-
-### Running the TypeScript Twin
-1. Navigate to the `/typescript` directory.
-2. Install dependencies: `npm install`
-3. Start development server: `npm run dev`
-
----
-
-## Deployment
-
-The repository is configured for a Monorepo deployment on the Vercel platform.
-
-- **Primary Route**: The root `vercel.json` is configured to route traffic to the **Ruby Twin**.
-- **History**: This repository preserves the original Git history of the TypeScript project to maintain a complete record of the project's evolution.
