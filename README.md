@@ -36,7 +36,7 @@ Alternatively, you can run them separately:
 
 **Backend:**
 ```bash
-cd fullstack/api
+cd fullstack/backend
 bundle install
 bundle exec rackup -p 4567
 ```
@@ -58,10 +58,10 @@ docker-compose up --build
 This will:
 - Spin up the Ruby API on port `4567`
 - Spin up the Next.js Frontend on port `3000`
-- Persist your local database in `fullstack/api/db`
+- Persist your local database in `fullstack/backend/db`
 
 ## Repository Structure
-- `fullstack/api`: The Ruby backend logic and database models.
+- `fullstack/backend`: The Ruby backend logic and database models.
 - `fullstack/web`: The Next.js frontend application.
 - `ruby/`: (Legacy) Historical server-side templates.
 - `typescript/`: (Legacy) Historical local-storage MVP.
