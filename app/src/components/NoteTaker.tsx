@@ -159,7 +159,7 @@ export const NoteTaker = ({ videoId, videoTitle, inputRef, onRequestTimestamp }:
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-vex-primary" />
+                    <FileText className="w-4 h-4 text-focus-primary" />
                     <span className="font-semibold text-white whitespace-nowrap">My Notes</span>
                 </div>
 
@@ -173,8 +173,8 @@ export const NoteTaker = ({ videoId, videoTitle, inputRef, onRequestTimestamp }:
                     <DropdownMenuTrigger asChild>
                         <button
                             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${saved
-                                    ? 'bg-vex-surface text-vex-muted hover:bg-vex-surfaceHover hover:text-white'
-                                    : 'bg-vex-primary text-black hover:bg-vex-primaryHover'
+                                    ? 'bg-focus-surface text-focus-muted hover:bg-focus-surfaceHover hover:text-white'
+                                    : 'bg-focus-primary text-black hover:bg-focus-primaryHover'
                                 }`}
                         >
                             <Save className="w-3.5 h-3.5" />
@@ -184,7 +184,7 @@ export const NoteTaker = ({ videoId, videoTitle, inputRef, onRequestTimestamp }:
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-40">
                         <DropdownMenuItem onClick={handleSaveLocally}>
-                            <Save className="w-4 h-4 mr-2 text-vex-primary" />
+                            <Save className="w-4 h-4 mr-2 text-focus-primary" />
                             Save Locally
                         </DropdownMenuItem>
                         <DropdownMenuItem onClick={handleExportPDF} disabled={!notes.trim()}>
@@ -205,7 +205,7 @@ export const NoteTaker = ({ videoId, videoTitle, inputRef, onRequestTimestamp }:
 
             {/* Status Message */}
             {saveMessage && (
-                <div className="text-xs text-vex-primary mb-2 animate-pulse">
+                <div className="text-xs text-focus-primary mb-2 animate-pulse">
                     ✓ {saveMessage}
                 </div>
             )}
@@ -216,7 +216,7 @@ export const NoteTaker = ({ videoId, videoTitle, inputRef, onRequestTimestamp }:
                 onChange={handleNotesChange}
                 placeholder="Write your notes here..."
                 ref={resolvedInputRef}
-                className="flex-1 min-h-[300px] font-mono text-sm resize-none bg-vex-surface border-vex-border text-white placeholder:text-vex-muted/50 focus:border-vex-primary focus:ring-1 focus:ring-vex-primary/30"
+                className="flex-1 min-h-[300px] font-mono text-sm resize-none bg-focus-surface border-focus-border text-white placeholder:text-focus-muted/50 focus:border-focus-primary focus:ring-1 focus:ring-focus-primary/30"
             />
         </div>
     );

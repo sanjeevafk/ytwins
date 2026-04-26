@@ -35,13 +35,13 @@ export function NoteSearch({
                 value={query}
                 onChange={(event) => onQueryChange(event.target.value)}
                 placeholder="Search notes..."
-                className="h-9 bg-[#171717] border-[#2E2E2E] text-gray-200 placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-vex-primary"
+                className="h-9 bg-[#171717] border-[#2E2E2E] text-gray-200 placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-focus-primary"
             />
             <div className="grid grid-cols-2 gap-2">
                 <select
                     value={sortBy}
                     onChange={(event) => onSortByChange(event.target.value as 'updated' | 'created' | 'relevance')}
-                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-vex-primary"
+                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-focus-primary"
                 >
                     <option value="updated">Updated</option>
                     <option value="created">Created</option>
@@ -50,7 +50,7 @@ export function NoteSearch({
                 <select
                     value={videoId}
                     onChange={(event) => onVideoChange(event.target.value)}
-                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-vex-primary"
+                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-focus-primary"
                 >
                     <option value="">All videos</option>
                     {videoOptions.map((option) => (
@@ -65,13 +65,13 @@ export function NoteSearch({
                     type="date"
                     value={dateFrom}
                     onChange={(event) => onDateFromChange(event.target.value)}
-                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-vex-primary"
+                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-focus-primary"
                 />
                 <input
                     type="date"
                     value={dateTo}
                     onChange={(event) => onDateToChange(event.target.value)}
-                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-vex-primary"
+                    className="h-9 rounded-md border border-[#2E2E2E] bg-[#171717] px-2 text-xs text-gray-200 focus:outline-none focus:ring-1 focus:ring-focus-primary"
                 />
             </div>
         </div>

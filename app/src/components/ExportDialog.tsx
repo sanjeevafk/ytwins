@@ -62,7 +62,7 @@ export function ExportDialog({ isOpen, onClose }: ExportDialogProps) {
                     >
                         Export as JSON
                     </button>
-                    {message && <p className="text-xs text-vex-primary">{message}</p>}
+                    {message && <p className="text-xs text-focus-primary">{message}</p>}
                 </div>
             </DialogContent>
         </Dialog>

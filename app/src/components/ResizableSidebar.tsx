@@ -90,24 +90,24 @@ export const ResizableSidebar = ({
                 {/* Visible drag indicator line */}
                 <div
                     className={`absolute ${side === 'left' ? 'right-0' : 'left-0'} top-0 w-[3px] h-full transition-all duration-150 ${isResizing
-                            ? 'bg-vex-primary shadow-[0_0_8px_rgba(0,224,115,0.5)]'
-                            : 'bg-vex-border/50 group-hover:bg-vex-primary/70'
+                            ? 'bg-focus-primary shadow-[0_0_8px_rgba(0,224,115,0.5)]'
+                            : 'bg-focus-border/50 group-hover:bg-focus-primary/70'
                         }`}
                 />
 
                 {/* Center grip indicator */}
                 <div
                     className={`absolute ${side === 'left' ? 'right-0' : 'left-0'} top-1/2 -translate-y-1/2 w-[3px] h-16 rounded-full transition-all duration-150 ${isResizing
-                            ? 'bg-vex-primary'
-                            : 'bg-vex-muted/30 group-hover:bg-vex-primary/50'
+                            ? 'bg-focus-primary'
+                            : 'bg-focus-muted/30 group-hover:bg-focus-primary/50'
                         }`}
                 />
 
                 {/* Dots pattern for grip */}
                 <div className={`absolute ${side === 'left' ? 'right-[1px]' : 'left-[1px]'} top-1/2 -translate-y-1/2 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity ${isResizing ? 'opacity-100' : ''}`}>
-                    <div className="w-[2px] h-[2px] rounded-full bg-vex-muted" />
-                    <div className="w-[2px] h-[2px] rounded-full bg-vex-muted" />
-                    <div className="w-[2px] h-[2px] rounded-full bg-vex-muted" />
+                    <div className="w-[2px] h-[2px] rounded-full bg-focus-muted" />
+                    <div className="w-[2px] h-[2px] rounded-full bg-focus-muted" />
+                    <div className="w-[2px] h-[2px] rounded-full bg-focus-muted" />
                 </div>
             </div>
         </div>

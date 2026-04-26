@@ -18,11 +18,11 @@ const bodyFont = Work_Sans({
 export default function LandingPage() {
     return (
         <div
-            className={`${displayFont.variable} ${bodyFont.variable} bg-vex-bg text-vex-text antialiased selection:bg-vex-primary selection:text-black flex flex-col min-h-screen`}
+            className={`${displayFont.variable} ${bodyFont.variable} bg-focus-bg text-focus-text antialiased selection:bg-focus-primary selection:text-black flex flex-col min-h-screen`}
             style={{ fontFamily: 'var(--font-body)' }}
         >
             {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 border-b border-vex-border/50 bg-vex-bg/80 backdrop-blur-md">
+            <nav className="fixed top-0 w-full z-50 border-b border-focus-border/50 bg-focus-bg/80 backdrop-blur-md">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <Image
@@ -39,20 +39,20 @@ export default function LandingPage() {
                             href="https://github.com/sanjeevafk/ytwins"
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center h-9 w-9 rounded-full border border-vex-border text-vex-muted hover:text-white hover:border-white/60 transition-colors"
+                            className="inline-flex items-center justify-center h-9 w-9 rounded-full border border-focus-border text-focus-muted hover:text-white hover:border-white/60 transition-colors"
                             aria-label="FocusTube GitHub repository"
                         >
                             <Github className="w-4 h-4" />
                         </Link>
                         <Link
                             href="/privacy"
-                            className="text-xs uppercase tracking-widest text-vex-muted hover:text-white transition-colors"
+                            className="text-xs uppercase tracking-widest text-focus-muted hover:text-white transition-colors"
                         >
                             Privacy
                         </Link>
                         <Link
                             href="/app"
-                            className="h-9 px-4 rounded-full bg-vex-primary hover:bg-vex-primaryHover text-black text-xs font-bold uppercase tracking-widest flex items-center justify-center transition-all"
+                            className="h-9 px-4 rounded-full bg-focus-primary hover:bg-focus-primaryHover text-black text-xs font-bold uppercase tracking-widest flex items-center justify-center transition-all"
                         >
                             Launch App
                         </Link>
@@ -69,19 +69,19 @@ export default function LandingPage() {
                         backgroundPosition: 'top center, top left',
                     }}
                 />
-                <div className="absolute -top-40 right-0 w-[520px] h-[520px] bg-vex-primary/10 blur-[140px] rounded-full -z-10" />
+                <div className="absolute -top-40 right-0 w-[520px] h-[520px] bg-focus-primary/10 blur-[140px] rounded-full -z-10" />
                 <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-white/5 blur-[160px] rounded-full -z-10" />
 
                 <section className="max-w-6xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-vex-border bg-vex-surface/80 text-xs uppercase tracking-[0.3em] text-vex-muted">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-focus-border bg-focus-surface/80 text-xs uppercase tracking-[0.3em] text-focus-muted">
                         Local-first learning studio
                     </div>
 
                     <h1 className="mt-8 text-5xl sm:text-6xl lg:text-7xl leading-none text-white font-[var(--font-display)]">
                         Build your
-                        <span className="block text-vex-primary">study flow.</span>
+                        <span className="block text-focus-primary">study flow.</span>
                     </h1>
-                    <p className="mt-6 text-base sm:text-lg text-vex-muted max-w-2xl mx-auto leading-relaxed">
+                    <p className="mt-6 text-base sm:text-lg text-focus-muted max-w-2xl mx-auto leading-relaxed">
                         FocusTube is a distraction-free YouTube workspace with structured notes, review mode,
                         and focus tools. Everything stays on your device.
                     </p>
@@ -89,13 +89,13 @@ export default function LandingPage() {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/app"
-                            className="h-12 px-8 rounded-full bg-vex-primary hover:bg-vex-primaryHover text-black font-semibold uppercase tracking-widest flex items-center justify-center transition-transform hover:scale-[1.03]"
+                            className="h-12 px-8 rounded-full bg-focus-primary hover:bg-focus-primaryHover text-black font-semibold uppercase tracking-widest flex items-center justify-center transition-transform hover:scale-[1.03]"
                         >
                             Launch Player
                         </Link>
                         <Link
                             href="/privacy"
-                            className="h-12 px-8 rounded-full border border-vex-border text-white font-semibold uppercase tracking-widest flex items-center justify-center hover:border-white/60 transition-colors"
+                            className="h-12 px-8 rounded-full border border-focus-border text-white font-semibold uppercase tracking-widest flex items-center justify-center hover:border-white/60 transition-colors"
                         >
                             Privacy First
                         </Link>
@@ -131,60 +131,60 @@ export default function LandingPage() {
                     ].map((feature) => (
                         <div
                             key={feature.title}
-                            className="rounded-2xl border border-vex-border/60 bg-vex-surface/80 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-transform hover:-translate-y-1"
+                            className="rounded-2xl border border-focus-border/60 bg-focus-surface/80 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-transform hover:-translate-y-1"
                         >
-                            <p className="text-sm uppercase tracking-[0.2em] text-vex-muted">Feature</p>
+                            <p className="text-sm uppercase tracking-[0.2em] text-focus-muted">Feature</p>
                             <h3 className="mt-3 text-xl text-white font-semibold">{feature.title}</h3>
-                            <p className="mt-2 text-sm text-vex-muted leading-relaxed">{feature.body}</p>
+                            <p className="mt-2 text-sm text-focus-muted leading-relaxed">{feature.body}</p>
                         </div>
                     ))}
                 </section>
 
                 <section className="max-w-6xl mx-auto mt-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
-                    <div className="rounded-3xl border border-vex-border/60 bg-[#111111] p-8 shadow-2xl">
+                    <div className="rounded-3xl border border-focus-border/60 bg-[#111111] p-8 shadow-2xl">
                         <h2 className="text-3xl text-white font-semibold">How it works</h2>
-                        <div className="mt-6 space-y-5 text-sm text-vex-muted">
+                        <div className="mt-6 space-y-5 text-sm text-focus-muted">
                             <div className="flex items-start gap-4">
-                                <span className="text-vex-primary text-xs font-semibold">01</span>
+                                <span className="text-focus-primary text-xs font-semibold">01</span>
                                 <p>Paste a playlist URL and FocusTube loads the playlist in a focused player.</p>
                             </div>
                             <div className="flex items-start gap-4">
-                                <span className="text-vex-primary text-xs font-semibold">02</span>
+                                <span className="text-focus-primary text-xs font-semibold">02</span>
                                 <p>Capture notes with timestamps, then search or export them anytime.</p>
                             </div>
                             <div className="flex items-start gap-4">
-                                <span className="text-vex-primary text-xs font-semibold">03</span>
+                                <span className="text-focus-primary text-xs font-semibold">03</span>
                                 <p>Review notes on schedule, track stats, and stay in flow with the focus timer.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-3xl border border-vex-border/60 bg-vex-surface/90 p-8">
+                    <div className="rounded-3xl border border-focus-border/60 bg-focus-surface/90 p-8">
                         <h3 className="text-lg text-white font-semibold">Local-first by design</h3>
-                        <p className="mt-3 text-sm text-vex-muted leading-relaxed">
+                        <p className="mt-3 text-sm text-focus-muted leading-relaxed">
                             Your notes, progress, and review data stay on your device. The only server calls are
                             for YouTube metadata, proxied securely through route handlers.
                         </p>
-                        <div className="mt-6 rounded-2xl border border-vex-border/50 bg-[#0c0c0c] p-4 text-xs text-vex-muted">
+                        <div className="mt-6 rounded-2xl border border-focus-border/50 bg-[#0c0c0c] p-4 text-xs text-focus-muted">
                             No accounts. No ads. No tracking.
                         </div>
                     </div>
                 </section>
             </main>
 
-            <footer className="py-10 border-t border-vex-border/30">
-                <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-vex-muted">
+            <footer className="py-10 border-t border-focus-border/30">
+                <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-focus-muted">
                     <span>Focus. Review. Repeat.</span>
                     <div className="flex items-center gap-4">
                         <Link
                             href="https://github.com/sanjeevafk/ytwins"
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-2 text-vex-muted hover:text-white transition-colors"
+                            className="inline-flex items-center gap-2 text-focus-muted hover:text-white transition-colors"
                         >
                             <Github className="w-4 h-4" />
                             GitHub
                         </Link>
-                        <Link href="/app" className="text-vex-primary hover:text-vex-primaryHover">Launch FocusTube</Link>
+                        <Link href="/app" className="text-focus-primary hover:text-focus-primaryHover">Launch FocusTube</Link>
                     </div>
                 </div>
             </footer>

@@ -400,7 +400,7 @@ export default function AppPage() {
     }
 
     return (
-        <div className="bg-vex-bg text-vex-text antialiased h-dvh w-full overflow-hidden flex selection:bg-vex-primary selection:text-black">
+        <div className="bg-focus-bg text-focus-text antialiased h-dvh w-full overflow-hidden flex selection:bg-focus-primary selection:text-black">
 
             {/* Desktop Sidebar */}
             <ResizableSidebar
@@ -409,7 +409,7 @@ export default function AppPage() {
                 minWidth={200}
                 maxWidth={400}
                 storageKey={LEFT_SIDEBAR_KEY}
-                className="hidden md:flex flex-col border-r border-vex-border bg-vex-bg h-full shrink-0 z-20"
+                className="hidden md:flex flex-col border-r border-focus-border bg-focus-bg h-full shrink-0 z-20"
             >
                 <div className="flex flex-col h-full p-6">
                     {/* Logo */}
@@ -430,7 +430,7 @@ export default function AppPage() {
                         <div className="flex-1 flex flex-col min-h-0">
                             <button
                                 onClick={() => setActiveNav('player')}
-                                className="flex items-center gap-2 text-vex-muted hover:text-white mb-4 transition-colors"
+                                className="flex items-center gap-2 text-focus-muted hover:text-white mb-4 transition-colors"
                             >
                                 <ArrowLeft className="w-4 h-4" />
                                 <span className="text-sm">Back to Player</span>
@@ -451,11 +451,11 @@ export default function AppPage() {
                                 <button
                                     onClick={() => setActiveNav('player')}
                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeNav === 'player'
-                                        ? 'bg-vex-surface/50 border border-vex-border/50 text-white font-medium shadow-sm'
-                                        : 'text-vex-muted hover:bg-vex-surfaceHover hover:text-white'
+                                        ? 'bg-focus-surface/50 border border-focus-border/50 text-white font-medium shadow-sm'
+                                        : 'text-focus-muted hover:bg-focus-surfaceHover hover:text-white'
                                         }`}
                                 >
-                                    <Play className={`w-5 h-5 ${activeNav === 'player' ? 'text-vex-primary' : ''}`} />
+                                    <Play className={`w-5 h-5 ${activeNav === 'player' ? 'text-focus-primary' : ''}`} />
                                     Player
                                 </button>
                                 <button
@@ -464,38 +464,38 @@ export default function AppPage() {
                                         setShowHistory(true);
                                     }}
                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeNav === 'history'
-                                        ? 'bg-vex-surface/50 border border-vex-border/50 text-white font-medium shadow-sm'
-                                        : 'text-vex-muted hover:bg-vex-surfaceHover hover:text-white'
+                                        ? 'bg-focus-surface/50 border border-focus-border/50 text-white font-medium shadow-sm'
+                                        : 'text-focus-muted hover:bg-focus-surfaceHover hover:text-white'
                                         }`}
                                 >
-                                    <Clock className={`w-5 h-5 ${activeNav === 'history' ? 'text-vex-primary' : ''}`} />
+                                    <Clock className={`w-5 h-5 ${activeNav === 'history' ? 'text-focus-primary' : ''}`} />
                                     History
                                 </button>
                                 <button
                                     onClick={() => setActiveNav('notes')}
                                     disabled={!hasVideos}
                                     className={`w-full hidden md:flex items-center gap-3 px-4 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${activeNav === 'notes'
-                                        ? 'bg-vex-surface/50 border border-vex-border/50 text-white font-medium shadow-sm'
-                                        : 'text-vex-muted hover:bg-vex-surfaceHover hover:text-white'
+                                        ? 'bg-focus-surface/50 border border-focus-border/50 text-white font-medium shadow-sm'
+                                        : 'text-focus-muted hover:bg-focus-surfaceHover hover:text-white'
                                         }`}
                                 >
-                                    <PenLine className={`w-5 h-5 ${activeNav === 'notes' ? 'text-vex-primary' : ''}`} />
+                                    <PenLine className={`w-5 h-5 ${activeNav === 'notes' ? 'text-focus-primary' : ''}`} />
                                     Notes (Desktop only)
                                 </button>
                                 <button
                                     onClick={() => setActiveNav('review')}
                                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeNav === 'review'
-                                        ? 'bg-vex-surface/50 border border-vex-border/50 text-white font-medium shadow-sm'
-                                        : 'text-vex-muted hover:bg-vex-surfaceHover hover:text-white'
+                                        ? 'bg-focus-surface/50 border border-focus-border/50 text-white font-medium shadow-sm'
+                                        : 'text-focus-muted hover:bg-focus-surfaceHover hover:text-white'
                                         }`}
                                 >
-                                    <RotateCcw className={`w-5 h-5 ${activeNav === 'review' ? 'text-vex-primary' : ''}`} />
+                                    <RotateCcw className={`w-5 h-5 ${activeNav === 'review' ? 'text-focus-primary' : ''}`} />
                                     Review
                                 </button>
                             </nav>
 
                             {/* Bottom Actions */}
-                            <div className="pt-6 border-t border-vex-border">
+                            <div className="pt-6 border-t border-focus-border">
                                 <button
                                     onClick={handleClearData}
                                     className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-colors"
@@ -510,16 +510,16 @@ export default function AppPage() {
             </ResizableSidebar>
 
             {/* Main Content */}
-            <main className="flex-1 flex flex-col relative w-full h-full bg-vex-bg min-w-0">
+            <main className="flex-1 flex flex-col relative w-full h-full bg-focus-bg min-w-0">
 
                 {/* Desktop Top Bar */}
-                <header className="hidden md:flex h-12 shrink-0 items-center justify-between px-4 bg-vex-bg z-20">
+                <header className="hidden md:flex h-12 shrink-0 items-center justify-between px-4 bg-focus-bg z-20">
                     <FocusTimer />
                     <AuthButton />
                 </header>
 
                 {/* Mobile Header */}
-                <header className="md:hidden h-14 shrink-0 border-b border-vex-border flex items-center justify-between px-4 bg-vex-bg/95 backdrop-blur z-20">
+                <header className="md:hidden h-14 shrink-0 border-b border-focus-border flex items-center justify-between px-4 bg-focus-bg/95 backdrop-blur z-20">
                     <Link href="/" className="flex items-center gap-2">
                         <Image
                             src="/logo.png"
@@ -550,21 +550,21 @@ export default function AppPage() {
                             <div className="flex flex-wrap gap-2">
                                 <button
                                     onClick={() => setActiveSubpanel('player')}
-                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'player' ? 'bg-vex-primary text-black' : 'bg-vex-surface text-vex-muted hover:text-white'}`}
+                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'player' ? 'bg-focus-primary text-black' : 'bg-focus-surface text-focus-muted hover:text-white'}`}
                                 >
                                     <Play className="w-4 h-4" />
                                     Player
                                 </button>
                                 <button
                                     onClick={() => setActiveSubpanel('collections')}
-                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'collections' ? 'bg-vex-primary text-black' : 'bg-vex-surface text-vex-muted hover:text-white'}`}
+                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'collections' ? 'bg-focus-primary text-black' : 'bg-focus-surface text-focus-muted hover:text-white'}`}
                                 >
                                     <Layers className="w-4 h-4" />
                                     Collections
                                 </button>
                                 <button
                                     onClick={() => setActiveSubpanel('stats')}
-                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'stats' ? 'bg-vex-primary text-black' : 'bg-vex-surface text-vex-muted hover:text-white'}`}
+                                    className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${activeSubpanel === 'stats' ? 'bg-focus-primary text-black' : 'bg-focus-surface text-focus-muted hover:text-white'}`}
                                 >
                                     <BarChart3 className="w-4 h-4" />
                                     Stats
@@ -623,7 +623,7 @@ export default function AppPage() {
                                         onMouseDown={() => setIsResizingRight(true)}
                                         className="absolute left-0 top-0 w-2 h-full cursor-col-resize group z-30 flex items-center justify-center"
                                     >
-                                        <div className={`w-1 h-12 rounded-full bg-vex-border opacity-0 group-hover:opacity-100 transition-opacity ${isResizingRight ? 'opacity-100 bg-vex-primary' : ''}`} />
+                                        <div className={`w-1 h-12 rounded-full bg-focus-border opacity-0 group-hover:opacity-100 transition-opacity ${isResizingRight ? 'opacity-100 bg-focus-primary' : ''}`} />
                                     </div>
                                     <PlaylistSidebar
                                         videos={playlistData.videos}
@@ -640,7 +640,7 @@ export default function AppPage() {
                                 {/* Welcome Message */}
                                 <div className="text-center mb-8 md:mb-12">
                                     <h2 className="text-2xl md:text-4xl font-bold mb-2 text-white">Ready to learn?</h2>
-                                    <p className="text-sm md:text-lg text-vex-muted">Jump back in or start something new.</p>
+                                    <p className="text-sm md:text-lg text-focus-muted">Jump back in or start something new.</p>
                                 </div>
 
                                 {/* TODO: Recently Viewed - Show for logged-in users */}
@@ -655,9 +655,9 @@ export default function AppPage() {
                                             handlePlaylistSubmit();
                                         }}
                                     >
-                                        <div className="absolute -inset-1 bg-gradient-to-r from-vex-primary/30 to-blue-500/30 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
-                                        <div className="relative flex items-center bg-vex-surface border border-vex-border rounded-2xl shadow-2xl p-2 transition-transform focus-within:scale-[1.01]">
-                                            <div className="pl-4 text-vex-muted">
+                                        <div className="absolute -inset-1 bg-gradient-to-r from-focus-primary/30 to-blue-500/30 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                                        <div className="relative flex items-center bg-focus-surface border border-focus-border rounded-2xl shadow-2xl p-2 transition-transform focus-within:scale-[1.01]">
+                                            <div className="pl-4 text-focus-muted">
                                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                                                 </svg>
@@ -668,12 +668,12 @@ export default function AppPage() {
                                                 onChange={(e) => setUrl(e.target.value)}
                                                 placeholder="Paste YouTube Link or Playlist..."
                                                 disabled={loading}
-                                                className="w-full bg-transparent border-none focus:ring-0 focus:outline-none text-white placeholder-vex-muted/50 px-4 py-4 h-14 text-lg disabled:opacity-50"
+                                                className="w-full bg-transparent border-none focus:ring-0 focus:outline-none text-white placeholder-focus-muted/50 px-4 py-4 h-14 text-lg disabled:opacity-50"
                                             />
                                             <button
                                                 type="submit"
                                                 disabled={loading || !url.trim()}
-                                                className="bg-vex-primary hover:bg-vex-primaryHover disabled:opacity-50 disabled:hover:bg-vex-primary text-black px-6 py-3 rounded-xl font-bold transition-all shadow-[0_0_15px_rgba(0,224,115,0.3)] hover:shadow-[0_0_25px_rgba(0,224,115,0.5)]"
+                                                className="bg-focus-primary hover:bg-focus-primaryHover disabled:opacity-50 disabled:hover:bg-focus-primary text-black px-6 py-3 rounded-xl font-bold transition-all shadow-[0_0_15px_rgba(0,224,115,0.3)] hover:shadow-[0_0_25px_rgba(0,224,115,0.5)]"
                                             >
                                                 {loading ? 'Loading...' : 'Launch'}
                                             </button>
@@ -683,7 +683,7 @@ export default function AppPage() {
 
                                 {/* Error Display */}
                                 {error && (
-                                    <div className="w-full max-w-2xl mx-auto mt-4 p-4 backdrop-blur rounded-xl shadow-lg bg-vex-surface border border-red-500 text-red-400">
+                                    <div className="w-full max-w-2xl mx-auto mt-4 p-4 backdrop-blur rounded-xl shadow-lg bg-focus-surface border border-red-500 text-red-400">
                                         {error}
                                     </div>
                                 )}
@@ -694,7 +694,7 @@ export default function AppPage() {
                 </div>
 
                 {/* Mobile Bottom Section */}
-                <div className="md:hidden fixed bottom-0 w-full z-50 bg-gradient-to-t from-black via-vex-bg to-transparent pb-safe-bottom">
+                <div className="md:hidden fixed bottom-0 w-full z-50 bg-gradient-to-t from-black via-focus-bg to-transparent pb-safe-bottom">
 
                     {/* Mobile URL Input */}
                     {!hasVideos && (
@@ -706,20 +706,20 @@ export default function AppPage() {
                                     handlePlaylistSubmit();
                                 }}
                             >
-                                <div className="absolute -inset-0.5 bg-gradient-to-r from-vex-primary/30 to-blue-500/30 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
-                                <div className="relative flex items-center bg-vex-surface border border-vex-border rounded-xl shadow-2xl p-1.5">
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-focus-primary/30 to-blue-500/30 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                                <div className="relative flex items-center bg-focus-surface border border-focus-border rounded-xl shadow-2xl p-1.5">
                                     <input
                                         type="text"
                                         value={url}
                                         onChange={(e) => setUrl(e.target.value)}
                                         placeholder="Paste YouTube Link..."
                                         disabled={loading}
-                                        className="flex-1 bg-transparent border-none focus:ring-0 focus:outline-none text-white placeholder-vex-muted/50 px-3 py-3 h-12 text-base disabled:opacity-50"
+                                        className="flex-1 bg-transparent border-none focus:ring-0 focus:outline-none text-white placeholder-focus-muted/50 px-3 py-3 h-12 text-base disabled:opacity-50"
                                     />
                                     <button
                                         type="submit"
                                         disabled={loading || !url.trim()}
-                                        className="bg-vex-primary active:bg-vex-primaryHover disabled:opacity-50 text-black w-10 h-10 rounded-lg flex items-center justify-center shrink-0 shadow-lg"
+                                        className="bg-focus-primary active:bg-focus-primaryHover disabled:opacity-50 text-black w-10 h-10 rounded-lg flex items-center justify-center shrink-0 shadow-lg"
                                     >
                                         <Play className="w-5 h-5 ml-0.5" />
                                     </button>
@@ -729,10 +729,10 @@ export default function AppPage() {
                     )}
 
                     {/* Mobile Navigation */}
-                    <nav className="w-full h-14 bg-vex-bg/95 backdrop-blur border-t border-vex-border flex justify-around items-center px-2">
+                    <nav className="w-full h-14 bg-focus-bg/95 backdrop-blur border-t border-focus-border flex justify-around items-center px-2">
                         <button
                             onClick={() => setActiveNav('player')}
-                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'player' ? 'text-vex-primary' : 'text-vex-muted hover:text-white'
+                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'player' ? 'text-focus-primary' : 'text-focus-muted hover:text-white'
                                 }`}
                         >
                             <Home className="w-6 h-6" />
@@ -743,7 +743,7 @@ export default function AppPage() {
                                 setActiveNav('history');
                                 setShowHistory(true);
                             }}
-                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'history' ? 'text-vex-primary' : 'text-vex-muted hover:text-white'
+                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'history' ? 'text-focus-primary' : 'text-focus-muted hover:text-white'
                                 }`}
                         >
                             <Clock className="w-6 h-6" />
@@ -751,7 +751,7 @@ export default function AppPage() {
                         </button>
                         <button
                             onClick={() => setActiveNav('review')}
-                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'review' ? 'text-vex-primary' : 'text-vex-muted hover:text-white'
+                            className={`flex-1 flex flex-col items-center justify-center gap-1 py-2 active:scale-95 transition-transform ${activeNav === 'review' ? 'text-focus-primary' : 'text-focus-muted hover:text-white'
                                 }`}
                         >
                             <RotateCcw className="w-6 h-6" />
@@ -805,7 +805,7 @@ export default function AppPage() {
                         </button>
                         <button
                             onClick={() => handleSavePlaylistName(playlistNameDraft)}
-                            className="rounded-lg bg-vex-primary px-4 py-2 text-xs font-semibold text-black hover:bg-vex-primaryHover"
+                            className="rounded-lg bg-focus-primary px-4 py-2 text-xs font-semibold text-black hover:bg-focus-primaryHover"
                         >
                             Save Name
                         </button>

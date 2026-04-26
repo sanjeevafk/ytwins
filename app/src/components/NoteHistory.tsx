@@ -162,7 +162,7 @@ export const NoteHistory = ({ isOpen, onClose, onJumpToTimestamp }: NoteHistoryP
                             onClose();
                         }
                     }}
-                    className="mx-1 inline-flex items-center rounded-full border border-vex-primary/40 bg-vex-primary/10 px-2 py-0.5 text-xs font-semibold text-vex-primary hover:bg-vex-primary/20"
+                    className="mx-1 inline-flex items-center rounded-full border border-focus-primary/40 bg-focus-primary/10 px-2 py-0.5 text-xs font-semibold text-focus-primary hover:bg-focus-primary/20"
                 >
                     {fullMatch.trim()}
                 </button>

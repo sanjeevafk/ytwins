@@ -20,18 +20,18 @@ export function FocusTimer({ compact }: FocusTimerProps) {
     const isRunning = status === 'running';
 
     return (
-        <div className={`flex items-center gap-3 rounded-full border border-vex-border bg-vex-surface px-3 py-1 ${compact ? 'text-xs' : 'text-sm'}`}>
-            <span className="text-vex-muted">{label}</span>
+        <div className={`flex items-center gap-3 rounded-full border border-focus-border bg-focus-surface px-3 py-1 ${compact ? 'text-xs' : 'text-sm'}`}>
+            <span className="text-focus-muted">{label}</span>
             <span className="font-semibold text-white tabular-nums">{formatTime(secondsLeft)}</span>
             <button
                 onClick={isRunning ? pause : start}
-                className="rounded-full bg-vex-primary/20 px-2 py-1 text-xs font-semibold text-vex-primary hover:bg-vex-primary/30"
+                className="rounded-full bg-focus-primary/20 px-2 py-1 text-xs font-semibold text-focus-primary hover:bg-focus-primary/30"
             >
                 {isRunning ? 'Pause' : 'Start'}
             </button>
             <button
                 onClick={reset}
-                className="rounded-full px-2 py-1 text-xs text-vex-muted hover:text-white"
+                className="rounded-full px-2 py-1 text-xs text-focus-muted hover:text-white"
             >
                 Reset
             </button>

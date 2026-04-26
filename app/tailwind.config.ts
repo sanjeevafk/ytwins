@@ -12,7 +12,7 @@ const config: Config = {
         extend: {
             colors: {
                 // FocusTube Design System
-                vex: {
+                focus: {
                     bg: '#0A0A0A',
                     surface: '#151515',
                     surfaceHover: '#252525',

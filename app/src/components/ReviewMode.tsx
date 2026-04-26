@@ -30,12 +30,12 @@ export function ReviewMode({ notes, onOpenVideo }: ReviewModeProps) {
                 <div className="rounded-2xl border border-[#2E2E2E] bg-[#232323] p-6 shadow-xl">
                     <div className="flex items-center justify-between">
                         <div>
-                            <p className="text-xs uppercase tracking-wide text-vex-muted">Reviewing</p>
+                            <p className="text-xs uppercase tracking-wide text-focus-muted">Reviewing</p>
                             <h2 className="text-xl font-semibold text-white">{activeNote.title}</h2>
                         </div>
                         <button
                             onClick={() => onOpenVideo(activeNote.videoId)}
-                            className="rounded-lg border border-vex-border bg-vex-surface px-3 py-1.5 text-xs font-semibold text-vex-primary hover:bg-vex-surfaceHover"
+                            className="rounded-lg border border-focus-border bg-focus-surface px-3 py-1.5 text-xs font-semibold text-focus-primary hover:bg-focus-surfaceHover"
                         >
                             Open Video
                         </button>
@@ -57,7 +57,7 @@ export function ReviewMode({ notes, onOpenVideo }: ReviewModeProps) {
                 </div>
                 <button
                     onClick={() => setActiveVideoId(null)}
-                    className="text-sm text-vex-muted hover:text-white"
+                    className="text-sm text-focus-muted hover:text-white"
                 >
                     Back to list
                 </button>
@@ -71,9 +71,9 @@ export function ReviewMode({ notes, onOpenVideo }: ReviewModeProps) {
                 <div className="flex items-center justify-between">
                     <div>
                         <h2 className="text-2xl font-semibold text-white">Review Mode</h2>
-                        <p className="text-sm text-vex-muted">{dueNotes.length} notes due today</p>
+                        <p className="text-sm text-focus-muted">{dueNotes.length} notes due today</p>
                     </div>
-                    <span className="rounded-full bg-vex-primary/10 px-3 py-1 text-xs font-semibold text-vex-primary">
+                    <span className="rounded-full bg-focus-primary/10 px-3 py-1 text-xs font-semibold text-focus-primary">
                         Upcoming: {upcomingNotes.length}
                     </span>
                 </div>
@@ -88,11 +88,11 @@ export function ReviewMode({ notes, onOpenVideo }: ReviewModeProps) {
                             >
                                 <div>
                                     <p className="text-sm font-semibold text-gray-200">{note.title}</p>
-                                    <p className="text-xs text-vex-muted">Last updated {new Date(note.updatedAt).toLocaleDateString()}</p>
+                                    <p className="text-xs text-focus-muted">Last updated {new Date(note.updatedAt).toLocaleDateString()}</p>
                                 </div>
                                 <button
                                     onClick={() => setActiveVideoId(note.videoId)}
-                                    className="rounded-lg bg-vex-primary px-3 py-1.5 text-xs font-semibold text-black hover:bg-vex-primaryHover"
+                                    className="rounded-lg bg-focus-primary px-3 py-1.5 text-xs font-semibold text-black hover:bg-focus-primaryHover"
                                 >
                                     Review
                                 </button>

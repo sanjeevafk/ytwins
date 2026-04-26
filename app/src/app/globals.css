@@ -29,14 +29,14 @@
     --chart-5: 27 87% 67%;
 
     /* FocusTube Design System Colors */
-    --color-vex-bg: #0A0A0A;
-    --color-vex-surface: #151515;
-    --color-vex-surfaceHover: #252525;
-    --color-vex-primary: #00E073;
-    --color-vex-primaryHover: #00C968;
-    --color-vex-text: #FFFFFF;
-    --color-vex-muted: #A1A1A1;
-    --color-vex-border: #333333;
+    --color-focus-bg: #0A0A0A;
+    --color-focus-surface: #151515;
+    --color-focus-surfaceHover: #252525;
+    --color-focus-primary: #00E073;
+    --color-focus-primaryHover: #00C968;
+    --color-focus-text: #FFFFFF;
+    --color-focus-muted: #A1A1A1;
+    --color-focus-border: #333333;
 
     /* Box shadows */
     --shadow-glow: 0 0 40px rgba(0, 224, 115, 0.1);
