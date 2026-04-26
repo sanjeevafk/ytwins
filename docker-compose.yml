@@ -1,7 +1,7 @@
 services:
   api:
     build:
-      context: ./fullstack/web/backend
+      context: ./experiments/fullstack/web/backend
       dockerfile: Dockerfile
     ports:
       - "4567:4567"
@@ -10,11 +10,11 @@ services:
       - SESSION_SECRET=${SESSION_SECRET:-development_secret}
       - DATABASE_URL=libsql://... # Replace with actual or use local mount
     volumes:
-      - ./fullstack/web/backend/db:/app/db
+      - ./experiments/fullstack/web/backend/db:/app/db
 
   web:
     build:
-      context: ./fullstack/web
+      context: ./experiments/fullstack/web
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
